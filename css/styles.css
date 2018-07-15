@@ -80,7 +80,7 @@ nav h1 a {
     background-color: #eee;
     font-size: 17px;
     margin: 0;
-    width: 100%;
+    width: calc(100% - 80px);
 }
 
 /* Display list items side by side */
@@ -302,6 +302,8 @@ nav h1 a {
   margin: 0;
   padding: 0;
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 #reviews-list li {
   background-color: #fff;
@@ -315,6 +317,13 @@ nav h1 a {
   padding: 0;
   position: relative;
   width: 100%;
+}
+
+.name-and-date-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 40px;
 }
 
 .review-name {
@@ -370,6 +379,10 @@ nav h1 a {
   .filter-options select:last-of-type {
     margin: 10px calc((50% - 200px) * 2 / 3) 10px calc((50% - 200px) / 3);
   }
+
+  .inside #footer {
+    width: calc(100% - 50px);
+  }
 }
 
 @media screen and (min-width: 601px) {
@@ -385,12 +398,66 @@ nav h1 a {
   #map {
     height: 40vh;
   }
+
+  .inside #maincontent {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .inside #map-container {
+    width: 50%;
+    height: 80vh;
+  }
+
+  .inside #map {
+    height: 80vh;
+  }
+
+  #restaurant-container {
+    width: 50%;
+    border-top: 0;
+    border-bottom: 0; 
+  }
+
+  #restaurant-cuisine {
+    height: 28px;
+    width: 100%;
+  }
+
+  #reviews-container {
+    border-top: 1px solid #d9d9d9;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    width: 100%;
+  }
+
+  #reviews-container h2 {
+    margin-left: 15px;
+  }
+
+  #reviews-list li {
+    width: calc(50% - 12px);
+    display: block;
+    margin: 10px 5px;
+  }
+
+  .rating-container {
+    width: 65px;
+  }
 }
 
 @media screen and (min-width: 901px) {
   #restaurants-list li {
     width: calc(33.33% - 22px);
     }
+}
+
+@media screen and (min-width: 1001px) {
+  .inside #maincontent {
+    width: 1000px;
+    margin: 0 auto;
+  }
 }
 
 @media screen and (min-width: 1101px) {
