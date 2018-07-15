@@ -133,6 +133,13 @@ nav h1 a {
   text-align: center;
   width: 100%;
 }
+
+.selects-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .filter-options select {
   background-color: white;
   border: 1px solid #fff;
@@ -150,6 +157,7 @@ nav h1 a {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
 }
 
 #restaurants-list {
@@ -158,6 +166,8 @@ nav h1 a {
   margin: 0;
   padding: 5px;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
 }
 #restaurants-list li {
   background-color: #fff;
@@ -234,12 +244,6 @@ nav h1 a {
   background-color: #ccc;
   height: 60vh;
   width: 100%;
-}
-.inside #footer {
-  /* bottom: 0;
-  position: absolute;
-  width: 100vw;
-  padding: 10px 0; */
 }
 #restaurant-name {
   color: #f18200;
@@ -352,4 +356,51 @@ nav h1 a {
 }
 #restaurant-hours {
   margin: 0 0 10px 15px;
+}
+
+@media screen and (min-width: 401px) {
+  #site-header {
+    height: 40px;
+  }
+  
+  .filter-options select:first-of-type {
+    margin: 10px calc((50% - 200px) / 3) 10px calc((50% - 200px) * 2 / 3);
+  }
+
+  .filter-options select:last-of-type {
+    margin: 10px calc((50% - 200px) * 2 / 3) 10px calc((50% - 200px) / 3);
+  }
+}
+
+@media screen and (min-width: 601px) {
+  #restaurants-list {
+    padding: 0;
+  }
+  
+  #restaurants-list li {
+  width: calc(50% - 22px);
+  margin: 10px;
+  }
+
+  #map {
+    height: 40vh;
+  }
+}
+
+@media screen and (min-width: 901px) {
+  #restaurants-list li {
+    width: calc(33.33% - 22px);
+    }
+}
+
+@media screen and (min-width: 1101px) {
+  .selects-container {
+    width: 1100px;
+    margin: 0 auto;
+  }
+  
+  #restaurants-list {
+    width: 1100px;
+    margin: 0 auto;
+    }
 }
