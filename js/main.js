@@ -11,6 +11,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
   initMap(); // added 
   fetchNeighborhoods();
   fetchCuisines();
+  if ('serviceWorker' in navigator)
+  {
+    navigator.serviceWorker.register('/sw.js',).then(function(registration) {
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+
+      if(registration.installing) {
+        console.log('Service worker installing');
+      } else if(registration.waiting) {
+        console.log('Service worker installed');
+      } else if(registration.active) {
+        console.log('Service worker active');
+      }
+    }, function(err) {
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  }
 });
 
 /**
